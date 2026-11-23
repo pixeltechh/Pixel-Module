@@ -275,4 +275,4 @@ Testou em outro modelo? 🧪 Abra uma **issue** com:
 
 ---
 
-<p align="center">Feito com 🧡 por <b>pixeltech._</b> 🦊</p>
+<p align="center">Feito por <b>pixeltech._</b> 🦊</p>
