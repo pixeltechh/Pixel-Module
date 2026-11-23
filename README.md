@@ -9,7 +9,7 @@
 ![runtime](https://img.shields.io/badge/runtime-only-success)
 
 👤 **Autor:** pixeltech._
-🆔 **ID do módulo:** `a07_otimizador`
+🆔 **ID do módulo:** `Pixel-Module-🦊`
 
 ---
 
