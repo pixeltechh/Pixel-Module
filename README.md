@@ -37,7 +37,7 @@
 🎮 Partes específicas da MediaTek (GED Boost, nós da GPU Mali via `devfreq`) só funcionam onde o kernel expõe esses caminhos. Em aparelhos Exynos ou Snapdragon o módulo ignora o que não existe e registra no log.
 
 ### 📋 Requisitos
-- 🔓 Bootloader desbloqueado e **root com KernelSU**
+- 🔓 Bootloader desbloqueado ou Root Temporário e **com KernelSU**
 - 📦 Aplicativo **KernelSU Manager**
 - 🤖 Android moderno (recomendado Android 12 ou superior)
 
