@@ -3,13 +3,12 @@
 > ⚡ Módulo de **desempenho e estabilidade** para **KernelSU**, feito para **toda a linha Galaxy A** 📱 (todos os modelos e gerações), com ajustes extras para o **Helio G99 / Mali-G57**.
 > 🛡️ 100% **runtime**: nada é gravado em partições do sistema.
 
-![versão](https://img.shields.io/badge/vers%C3%A3o-v2.0-orange)
+![versão](https://img.shields.io/badge/vers%C3%A3o-v2.1-orange)
 ![root](https://img.shields.io/badge/root-KernelSU-blue)
 ![chip](https://img.shields.io/badge/chip-Helio%20G99%20%2F%20Mali--G57-green)
 ![runtime](https://img.shields.io/badge/runtime-only-success)
 
 👤 **Autor:** pixeltech._
-🆔 **ID do módulo:** `Pixel-Module-🦊`
 
 ---
 
@@ -106,6 +105,19 @@ Defina `PERFIL=` no `config.conf`:
 
 Vazio = você controla cada função no `config.conf`.
 
+### 🔧 Extras de sistema
+- 💾 **Ajuste de I/O:** `iostats` e `add_random` desligados, `rq_affinity=2` e `nr_requests` maior no armazenamento.
+- 🔓 **Boost ao ligar a tela:** a performance volta na hora, sem esperar o ciclo de 1 minuto, e a CPU recebe um boost de 2 s. Ao apagar a tela, tudo volta ao normal na hora.
+- 🕹️ **Game Mode do Android:** os jogos da `jogos.txt` ficam no modo `performance` (Android 12+).
+- 🌐 **Rede:** BBR (se o kernel tiver) e TCP Fast Open.
+- 📝 **Gravação da memória:** `dirty_ratio` e `dirty_background_ratio` em valores moderados (só reduz, nunca aumenta).
+- 🕵️ **Mais telemetria opcional** na lista de desativar (desligada até você ativar).
+
+### ⚠️ Extras de risco médio (desligados por padrão)
+- 🧊 `CACHED_FREEZER=1`: congela apps em cache. Pode atrasar alguns apps ao voltar.
+- 📶 `WIFI_LATENCIA=1`: Wi-Fi em baixa latência. Gasta mais bateria.
+- 🧮 `LIMITE_PROC_BG=24`: limita os processos em cache. Os apps reabrem do zero com mais frequência.
+
 ### 🎮 Modo jogo
 - 🕹️ Ao abrir um jogo da lista `jogos.txt`, libera RAM antes de começar.
 - 🔕 **Não perturbe** ligado durante o jogo e restaurado ao sair (`DND_JOGO=1`).
@@ -189,6 +201,14 @@ Os arquivos ficam em `/data/adb/a07_otimizador/` e **sobrevivem às atualizaçõ
 | `BENCH_MODE` | 1 | Modo benchmark |
 | `AUTO_REPARO` | 1 | Auto-reparo e proteção de bootloop |
 | `NOTIFICAR` | 0 | Notificações (desligadas por padrão) |
+| `IO_TUNING` | 1 | Ajuste de I/O do armazenamento |
+| `UNLOCK_BOOST` | 1 | Boost ao ligar a tela |
+| `GAME_MODE_ANDROID` | 1 | Game Mode do Android para os jogos da lista |
+| `NET_TUNING` | 1 | BBR e TCP Fast Open |
+| `DIRTY_TUNING` | 1 | Gravação pendente da memória |
+| `CACHED_FREEZER` | 0 | Congela apps em cache (risco médio) |
+| `WIFI_LATENCIA` | 0 | Wi-Fi em baixa latência (risco médio) |
+| `LIMITE_PROC_BG` | 0 | Limite de processos em cache, 0 = não mexe (risco médio) |
 
 📝 Os logs ficam em `/data/local/tmp/a07_otimizador.log` e `/data/local/tmp/a07_ram_historico.log`.
 
@@ -249,7 +269,7 @@ Remova o módulo no KernelSU Manager e reinicie. Ele restaura:
 
 ## 🧾 Histórico de versões
 
-### v2.0
+### v2.1
 - 🚀 Alta performance de CPU/GPU com Thermal Guard
 - 🎨 HW Accel, VSYNC, GED Boost, Touch Fixes e App Launch Boost
 - 🔒 Trava de 90 Hz com reaplicação automática
@@ -263,6 +283,8 @@ Remova o módulo no KernelSU Manager e reinicie. Ele restaura:
 - ✂️ TRIM diário, limpeza de lixo e compilação de apps
 - 📊 Ação com status `[OK]`/`[AVISO]`, gráfico de RAM e backup da configuração
 - 🔕 Sem notificações por padrão
+- 🔧 Ajuste de I/O, boost ao ligar a tela, Game Mode do Android, BBR/TCP Fast Open e gravação da memória
+- ⚠️ Extras de risco médio opcionais: freezer de apps em cache, Wi-Fi de baixa latência e limite de processos
 
 ---
 
